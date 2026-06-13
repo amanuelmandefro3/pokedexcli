@@ -17,6 +17,7 @@ func TestCleanInput(t *testing.T) {
 		{"explore pastoria-city-area", []string{"explore", "pastoria-city-area"}},
 		{"catch pikachu", []string{"catch", "pikachu"}},
 		{"inspect pikachu", []string{"inspect", "pikachu"}},
+		{"pokedex", []string{"pokedex"}},
 	}
 
 	for _, c := range cases {

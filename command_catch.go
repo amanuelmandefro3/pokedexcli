@@ -19,6 +19,9 @@ func commandCatch(cfg *config, args ...string) error {
 
 	caught := pokemonRes.BaseExperience <= 0 || rand.Intn(pokemonRes.BaseExperience) < 50
 	if caught {
+		if _, ok := cfg.pokedex[pokemonRes.Name]; !ok {
+			cfg.caughtPokemonNames = append(cfg.caughtPokemonNames, pokemonRes.Name)
+		}
 		cfg.pokedex[pokemonRes.Name] = pokemonRes
 		fmt.Printf("%s was caught!\n", pokemonRes.Name)
 	} else {
